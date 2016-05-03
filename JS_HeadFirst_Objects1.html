@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>HeadFirst Objects</title>
+<script>
+//Constructor for Blog Object
+function Blog(body, date){
+	this.body = body;
+	this.date = date;
+}
+
+//Object array myblog is created
+var myblog = [new Blog("Hi All...This is my first cube blog :)", "08/16/2015"),
+			  new Blog("Solved the first cube...so, bought a new one...yay!", "09/23/2015"),
+			  new Blog("Solved the second cube too...so, bought the new cube in the market", "10/25/2015"),
+			  new Blog("The new cube is a little difficult to solve..so..working on it..", "11/30/2015")];
+						
+//function to display the Blog object
+function showBlog(numEntries){
+	if(!numEntries){
+		numEntries = myblog.length;
+	}
+	var i = 0, BlogText = "";
+	while(i < numEntries && i < myblog.length)
+		{
+			BlogText = BlogText + "<p>" + myblog[i].date + "</p>" + "<p>" + myblog[i].body + "</p>" + "<br />";
+			i++;
+		}					
+						
+document.getElementById("mybutton").onclick = function(){
+	document.getElementById("mydiv").innerHTML = BlogText;
+}
+
+
+}
+
+</script>
+</head>
+<body>
+	<p><h3>YOU CUBE - My New Cube Blog!</h3></p>
+<div id = "mydiv"></div>
+<input type = "button" id ="mybutton" value = "Show my Blog entries" onclick = "showBlog(3);"/>
+</body>
+</html>
