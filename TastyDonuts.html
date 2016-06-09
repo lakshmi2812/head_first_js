@@ -1,0 +1,45 @@
+<html>
+<head><title>Tasty Donuts</title>
+</head>
+<body>
+	<h2><p>Tasty Donuts</p></h2>
+	<h3><p>Order Here:</p></h3>
+	<input type = "text" id = "cake_donuts" value = "#ofCakeDonuts" />
+	<input type = "text" id = "glazed_donuts" value = "#ofGlazedDonuts" />
+	
+	<button id = "mybutton">Diaplay Cost</button>
+	<p><div id = "sometext">Total Cost:</div></p>
+	
+	
+<script type = "text/javascript">
+	
+	function updateOrder()
+	{
+		const Taxrate = 0.05;
+		const Donutprice = 3;
+		var cakeDonuts = parseInt(document.getElementById("cake_donuts").value);
+		var glazedDonuts = parseInt(document.getElementById("glazed_donuts").value);
+		var subtotal = (cakeDonuts + glazedDonuts)* Donutprice;
+		var tax = subtotal * Taxrate;
+		var total = subtotal + tax; 
+		//document.write (total);
+		
+		return total;
+	
+	}
+	
+	//document.write(updateOrder());
+	
+	document.getElementById("mybutton").onclick = function(){
+		document.getElementById("sometext").innerHTML += " " + updateOrder(); 
+	}
+	
+	
+</script>
+	
+	
+	
+	
+
+</body>
+</html>
