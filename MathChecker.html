@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Math Checker</title>
+<style type = "text/css">
+ .colorful{
+	color:blue;
+}
+</style>
+</head>
+<body onload = "formReset()">
+	<div name = "colorful" class = "colorful">
+	<p color = "red"><h3>Math Checker</p></h3>
+	<p><h4>Hi Kids.. Come and try this fun page and check your ability to add numbers</h4></p>
+	</div>
+	
+	<form id = "myform">
+	<p>a: <input type = "text" id = "a" value = "" oninput = "checkMyMath()"/></p>
+	<p>b: <input type = "text" id = "b" value = ""oninput = "checkMyMath()"/></p>
+	<p>Sum: <input type = "text" id = "sum" value = ""/></p>
+	<p><button type = "button" id = "check" onclick = "checkSum()">Check</button></p>
+	</form>
+<script type = "text/javascript">
+	
+	function formReset(){
+		document.getElementById("myform").reset();
+	}
+	
+	function checkMyMath(){
+		
+		if((document.getElementById("a").value == "")||
+			(isNaN(document.getElementById("a").value)))
+			alert("Pleas enter a number");
+		if((document.getElementById("b").value == "")||
+			(isNaN(document.getElementById("a").value)))
+			alert("Pleas enter a number");
+		
+	}
+	
+	
+	function checkSum(){
+	var a = parseInt(document.getElementById("a").value);
+	var b = parseInt(document.getElementById("b").value);
+	var mysum = a + b;
+	if((parseInt(document.getElementById("sum").value)) == mysum)
+	{
+		alert("Congrats, your answer is correct! :)");
+	} 
+	else{
+		alert("Sorry, Wrong answer. Please try again! :|");
+	}
+ }
+	
+</script>
+</body>
+</html>
