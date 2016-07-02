@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>Stick Figure Adventure!</title>
+	<script type = "text/javascript">
+	
+	var curScene = 0;
+	
+	function changeScene(option)
+	{
+        //Clear the scene message
+		var message = "";
+		
+		switch(curScene){
+		case 0:
+			curScene = 1;
+			message = "Your journey begins at a fork in the road";
+			break;
+			
+		case 1:
+			if(option == 1)
+			{
+				curScene = 2;
+				message = "You have arrived at a cute little house in the woods";
+			}
+			else{
+				curScene = 3;
+				message = "You are standing on a bridge overlooking the stream";
+			}
+			break;
+			
+		case 2:
+			if(option == 1)
+			{
+				curScene = 4;
+				message = "Peeking through the window, you see a witch inside the house";
+			}
+			else{
+				curScene = 5;
+				message = "Sorry, a witch lives in the house and you just became a part of her stew";
+			}
+			break;
+			
+		case 3:
+			if(option == 1){
+				curScene = 6;
+				message = "Sorry, a Troll lives on the other side of the bridge and you just became his lunch";
+			}
+			else{
+				curScene = 7;
+				message = "Your stare is interrupted by the arrival of a huge troll";
+			}
+			break;
+			
+		case 4:
+			if(option == 1)
+			{
+				curScene = 8;
+				message = "To be continued..";
+			}
+			else{
+				curScene = 5;
+				message = "Sorry, a witch lives in the house and you just became a part of her stew";
+			}
+			break;
+			
+		case 5:
+			message = "To be continued..";
+			break;
+			
+		case 6:
+			message = "To be continued..";
+			break;
+			
+		case 7:
+			if(option == 1){
+				curScene = 6;
+				message = "Sorry, a Troll lives on the other side of the bridge and you just became his lunch";
+			}
+			else{
+				curScene = 9;
+				message = "To be continued";
+			}
+			break;
+			
+		case 8:
+			message = "To be continued..";
+			break;		
+		}
+		
+	document .getElementById("sceneimg").src = "scene" + curScene + ".png";
+	if(message != "")
+		alert(message);
+	}
+
+	</script>
+</head>
+<body>
+	
+	<div style = "margin-top:100px; text-align:center">
+		<img id = "sceneimg" src = "scene0.png" alt = "Stick Figure Adventure!"/><br />
+		<input type = "button" id = "option" value = "1" onclick = "changeScene(1)"/>
+		<input type = "button" id = "option" value = "2"  onclick = "changeScene(2)"/>
+	</div>
+	
+</body>
+</html>
