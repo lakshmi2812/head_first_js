@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dating Website</title>
+  <style>
+
+  #dating_form{
+    position: relative;
+    left: 40px;
+    top:40px;
+    border:1px solid #aaaabb;
+    background:lightyellow;
+    width: 850px;
+   height: auto;
+  }
+
+  .info{
+    border: 10px solid yellow;
+    margin-bottom:10px;
+    width:720px;
+  }
+  label:{
+    width:180px;
+    display:inline-block;
+    align:right;
+    align:top;
+  }
+  label:hover { font-size:40px }
+  input:hover{height:40px}
+  }
+  textarea{
+    width:360px;
+    height:50px;
+  }
+.checkradio{
+  width:auto;
+}
+mark{
+  background:#7D0552;
+  padding:1px;
+}
+.myrange{
+  text-align:auto;
+}
+  </style>
+</head>
+<body>
+  <form action = "https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php"enctype="multipart/form-data"id = "dating_form" method = "post">
+    <p><h3>Please Enter Your Details For Our Dating Website!</h3></p>
+
+    <fieldset class = "info">
+      <legend>Your Face</legend>
+      <label for = "mypic">Your image:</label>
+      <input type = "file" id = "mypic" value = "Choose File" required><br />
+      Image preview:<img id = "preview" alt = "Image preview:"/>
+    </fieldset>
+
+    <fieldset class = "info">
+      <legend>Your General Details</legend>
+      <label for = "name">Name:</label>
+      <input type = "text" name = "fullname" id = "name" placeholder = "Your full name" required><br />
+      <label class = "checkradio" for = "gender">Gender:</label>
+      <input type = "radio" class = "gender" name = "gender" value = "male" required/>Male
+      <input type = "radio" class = "gender" name = "gender" value = "female">Female<br />
+      <label for = "age">Age:</label>
+      <input type = "number" id = "age" name = "age" value = "age" required/><br />
+      <label for = "dob">Date of Birth:</label>
+      <input type = "date" id = "dob" name = "dob" required><br />
+      <label for = "favcolor">Favourite Color:</label>
+      <input type = "color" name = "color" id = "favcolor" value = "favcolor" required><br />
+      <label for = "country">Which Country?</label>
+        <select id = "country" name = "country" required>
+          <option value = "no selection">No selection</option>
+          <option value = "Australia">Australia</option>
+          <option value = "Belgium">Belgium</option>
+          <option value = "Canada">Canada</option>
+          <option value = "India">India</option>
+          <option value = "UnitedStates">United states</option>
+        </select>
+    </fieldset>
+
+    <fieldset class = "info">
+      <legend>Your Indicators</legend>
+      <label for = "height">Height:</label>
+      <mark>Short</mark><input id = "height" type = "range" min = "0" max = "100" required><mark>Tall</mark><br />
+      <label for = "salary">Salary:</label>
+      <mark>Poor</mark><input id = "salary" type = "range" min = "0" max = "100" required><mark>Rich</mark><br />
+    </fieldset>
+
+    <fieldset class = "info">
+      <legend>Your Contact Information</legend>
+      <label for = "email">Email:</label>
+      <input type = "email" id = "email" name = "email" required/><br /><br/>
+      <label for = "mobile">Mobile:</label>
+      <input type = "tel" id = "mobile" name = "mobile" required/><br /><br/>
+      <label for = "address">Address:</label>
+      <textarea id = "address" name = "address" rows = "3" cols = "90" placeholder = "Type your address here" required></textarea><br />
+      <label  class = "checkradio" for = "contactmethod">Method to contact you:</label>
+      <input type = "checkbox" name = "contacttype" class = "contactmethod" value= "email">Email
+      <input type = "checkbox" name = "contacttype" class = "contactmethod" value= "whatsapp">Whatsapp
+      <input type = "checkbox" name = "contacttype" class = "contactmethod" value= "inappchat">In-app chat
+    </fieldset>
+
+    <input type = "submit" value = "Submit!"/>
+  </form>
+
+  <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</body>
+</html>
