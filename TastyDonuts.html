@@ -6,22 +6,25 @@
 	<h2><p>Tasty Donuts</p></h2>
 	<h3><p>Order Here:</p></h3>
 	<p>Name: <input type = "text" id = "name" placeholder = "Enter your name here" value = "" oninput = "updateOrder()"/></p>
+	
 	<p>#ofCakeDonuts: <input type = "text" id = "cake_donuts" placeholder = "#ofCakeDonuts" value = "" oninput = "updateOrder()"/></p>
+	
 	<p>#ofGlazedDonuts: <input type = "text" id = "glazed_donuts" placeholder = "#ofGlazedDonuts" value = "" oninput = "updateOrder()"/></p>
-	<p>Minutes 'till pickup: <input type = "text" id = "pickupminutes" value = ""/></p>
+	
+	<!--<p>Minutes 'till pickup: <input type = "text" id = "pickupminutes" value = ""/></p>
 	<!--<p>Subtotal: <input type = "text" id = "subtotal" value = ""/></p>-->
 	<p>Total: <input type = "text" id = "total" value = ""/></p>
 	
-	<button id = "display_cost" onclick = "updateOrder()">Diaplay Cost</button>
+	<button id = "display_cost">Diaplay Cost</button>
 	
 	</form>
 	
 	
 <script type = "text/javascript">
 	
-	function formReset(){
+	/*function formReset(){
 		document.getElementById("myform").reset();
-	}
+	}*/
 	
 	function updateOrder()
 	{
@@ -46,7 +49,7 @@
 			alert("I\'m sorry but you should enter the number of minutes until pickup 
 		 		   before you place an order");
 		else
-		{
+		{*/
 		var subtotal = (cakeDonuts + glazedDonuts)* Donutprice;
 		var tax = subtotal * Taxrate;
 		var total = subtotal + tax; 
@@ -62,10 +65,10 @@
 	
 	//document.write(updateOrder());
 	
-	/*document.getElementById("display_cost").onclick = function(){
+	document.getElementById("display_cost").onclick = function(){
 		
 		document.getElementById("total").value += " " + "$" + updateOrder(); 
-	}*/
+	}
 	
 	
 </script>
