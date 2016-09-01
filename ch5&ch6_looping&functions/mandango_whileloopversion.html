@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Mandango Movie Seats</title>
+<style type = "text/css">
+#findseats{
+	text-align: center;
+}
+</style>
+</head>
+
+<body onload = "initSeats();">
+	<div style = "margin-top:75px; text-align:center">
+		<img id = "seat0" src = "" alt = "">
+		<img id = "seat1" src = "" alt = "">
+		<img id = "seat2" src = "" alt = "">
+		<img id = "seat3" src = "" alt = "">
+		<img id = "seat4" src = "" alt = "">
+		<img id = "seat5" src = "" alt = "">
+		<img id = "seat6" src = "" alt = "">
+		<img id = "seat7" src = "" alt = "">
+		<img id = "seat8" src = "" alt = "">
+		<img id = "seat9" src = "" alt = "">
+
+	<input style = "align:center" type = "button" id = "findseats" value = "Find Seats" onclick = "findSeat();">
+</div>
+
+	<script type = "text/javascript">
+		var seats = [true, false, true, true, true, true, true, false, true, false];
+		function initSeats()
+		{
+			for(var i = 0; i < seats.length; i++)
+			{
+				if(seats[i])
+					{
+					document.getElementById("seat" + i).src = "mandango/seat_avail.png";
+					document.getElementById("seat" + i).alt = "Seat is available";
+					}
+				else{
+					document.getElementById("seat" + i).src = "mandango/seat_unavail.png";
+					document.getElementById("seat" + i).alt = "Seat is not available";
+				}
+				}
+			}
+
+		var selSeat = -1;
+		//function to select available seats
+		function findSeat(){
+			if(selSeat>=0)
+			{
+				selSeat = -1;
+				initSeats();
+			}
+      var j = 0; var finished = false;
+      while((j < seats.length) && (!finished))
+			//for(var j = 0; j < seats.length; j++)
+			{
+					// See if the current seat is available
+					if (seats[j] && seats[j+1] && seats[j+2]) {
+						// Set the seat selection and update the appearance of the seat
+						selSeat = j;
+						document.getElementById("seat" + j).src = "mandango/seat_select.png";
+						document.getElementById("seat" + j).alt = "Your seat";
+						document.getElementById("seat" + (j + 1)).src = "mandango/seat_select.png";
+						document.getElementById("seat" + (j + 1)).alt = "Your seat";
+						document.getElementById("seat" + (j + 2)).src = "mandango/seat_select.png";
+						document.getElementById("seat" + (j + 2)).alt = "Your seat";
+
+						// Prompt the user to accept the seat
+						var accept = confirm("Seats " + (j + 1) + "through" + (j + 3) + " are available. Accept?");
+						if (accept) {
+							// The user accepted the seat, so we are done. Break out of the loop!
+              finished = true;
+							//break;
+						}
+						else
+						{
+							selSeat = -1;
+							document.getElementById("seat" + j).src = "mandango/seat_avail.png";
+							document.getElementById("seat" + j).alt = "Available seat";
+							document.getElementById("seat" + (j + 1)).src = "mandango/seat_avail.png";
+							document.getElementById("seat" + (j + 1)).alt = "Available seat";
+							document.getElementById("seat" + (j + 2)).src = "mandango/seat_avail.png";
+							document.getElementById("seat" + (j + 2)).alt = "Available seat";
+						}
+				}
+				j++;
+			}
+		}
+
+	</script>
+</body>
+</html>
