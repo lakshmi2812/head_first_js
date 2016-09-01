@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Fibonacci sequence</title>
+    </head>
+    <body onload = "fibonacci();">
+        <script type = "text/javascript">
+            var finished = false;
+            function fibonacci(){ 
+                do{
+                    //n is the user input
+                    var n = prompt("Please enter the length of the Fibonacci sequence to be displayed");
+                    //initialising the first two terms of the series
+                    var a=0,b=1;
+                    var counter = 1; var c = 0;
+                    //base case1:
+                    if(n == 1)
+                    {
+                        document.write("<p><h3>Here's the Fibonacci sequence: </h3></p>");
+                        document.write(a);
+                        finished = true;
+                    }
+                    //base case2:
+                    else if(n == 2)
+                    {
+                        document.write("<p><h3>Here's the Fibonacci sequence: </h3></p>");
+                        document.write(a + "," + b);
+                        finished = true;
+                    }
+                    else if(n>2)
+                    {
+                        document.write("<p><h3>Here's the Fibonacci sequence: </h3></p>");
+                        document.write(a + ", " + b);
+                        while (counter < n-1)
+                        {  
+                            c = a+b;
+                            document.write(", " + c);
+                            a=b;
+                            b=c;
+                            counter++;
+                        }
+                        finished = true;
+                    }
+                    else
+                    {
+                        alert("Please enter a number greater than 0");
+                    }
+                }while(!finished)
+            }
+        </script>
+    </body>
+</html>
