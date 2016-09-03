@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Leap Year</title>
+    </head>
+    <body onload = "leap_year();">
+        <script>
+           function leap_year(){
+               var year = prompt("Please enter a year");
+               if((year%4 == 0) && (year%100 != 0)||(year%400 == 0))
+                   {
+                   alert("The year you entered is a leap year!");
+                   }
+               else{
+                   alert("The year you entered is not a leap year!");
+               }
+           } 
+        </script>
+    </body>
+</html
