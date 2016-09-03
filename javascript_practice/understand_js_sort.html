@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Understanding sort() method in JS</title>
+    </head>
+    <body>
+        <script>
+            var numbers = [34,23,88,10,99,789,324,5];
+            document.write(numbers + "<br />");
+        function sortnum(){
+            numbers.sort(function(a,b){
+                document.write(a + " " + b + "<br />");
+                return a-b;
+            });
+            document.write(numbers);
+        }
+        
+        sortnum();
+        </script>
+    </body>
+</html>
