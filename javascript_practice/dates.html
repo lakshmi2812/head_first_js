@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Dates</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+            document.write("Today's date is : " + new Date() + "<br />");
+            var my_date = new Date("February 23, 1990 11:09:56");
+            document.write(my_date);
+            var new_date = new Date(2000, 0, 17, 10, 56, 45, 0);
+            document.write("<br />" + new_date);
+            document.write("<br />" + new_date.getDay());
+            
+            //return the name of the month from the entered month number
+            function getMonthNameFromMonthNumber(monthNumber)
+            {
+                var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                return monthNames[monthNumber];
+                
+            }
+            
+            document.write("<br />" + getMonthNameFromMonthNumber(0));
+            
+            //returns the name of the day from the entered day number
+            function getDayNameFromDate(dayNumber){
+                var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                return days[dayNumber];
+            }
+            
+            document.write("<br />" + getDayNameFromDate(6));
+            
+            //Returns the entered date in mm/dd/yyyy format
+            function mmddyyyyFormat(date)
+            {
+                var month = date.getMonth();
+                month++;
+                if(month < 10)
+                    month = "0" + month;
+                    
+                var _date = date.getDate();
+                
+                if(_date < 10)
+                    _date = "0" + _date;
+                
+                var year = date.getFullYear();
+                
+                return month + "/" + _date + "/" + year;
+            }
+            
+            document.write("<br />" + "The mm/dd/yyyy format for " + new_date + " is " + mmddyyyyFormat(new_date));
+            
+            //Returns the entered day name from the date input entered in mm/dd/yyyy format 
+            function findDay(mmddyy)
+            {
+                var my_date = mmddyy.split("/");
+                var actual_date = new Date(my_date);
+                var day = actual_date.getDay();
+                var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var dayNameFromDate = daysOfWeek[day];
+                return dayNameFromDate;
+            }
+            
+            document.write("<br />" + findDay("12/4/2014"));
+            
+        </script>
+    </body>
+</html>
