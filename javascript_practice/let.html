@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Understanding the use of 'let' keyword in JS</title>
+    </head>
+    <body>
+        <script type = "text/javascript">
+            
+            function varScope(){  
+                var num1 = 64;
+                if(num1%2 == 0)
+                    {
+                        var num1 = 65;
+                        document.write(num1 + "<br />");
+                    }
+                document.write( (num1) + "<br />");
+            }
+            
+            function letScope(){
+                let num2 = 64;
+                if(num2%2 == 0)
+                    {
+                        let num2 = 65;
+                        document.write(num2 + "<br />"); 
+                    }
+                document.write((num2)); 
+            }
+            
+            document.write("The output using var is: " + "<br />");varScope();
+            document.write("The output using let is: " + "<br />");letScope();
+            
+        </script>
+    </body>
+</html>
