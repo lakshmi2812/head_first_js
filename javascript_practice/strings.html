@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Practising String methids in JS</title>
+</head>
+<body>
+<script type = "text/javascript">
+    //using charAt() to return the first character of the string
+    var str = "How are you doing today?";
+    var mystr1 = "TRACE";
+    var mystr2 = "kangaroo";
+    var long_string = "SESQUIPEDALIAN";
+    if(str.indexOf("are")!=-1){
+        document.write("The substring \"are\" in the string " + str + "was found at position: " + str.indexOf("are") + "<br />");
+    }
+    else{
+        document.write("The substring was not found" + "<br />");
+    }
+    document.write(str.charAt("d") + "<br />");
+    document.write("The uppercase version of \'kangaroo\' is: " + mystr2.toUpperCase() + "<br />");
+    document.write("The lowercase version of \'TRACE\' is: " + mystr1.toLowerCase() + "<br />");
+    //trying to put to use the length property of String object
+    document.write("The length of the string \"SESQUIPEDALIAN\" is: " +  long_string.length);
+</script>
+</body>
+</html>
