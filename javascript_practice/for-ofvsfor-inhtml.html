@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title> Difference between For...Of loop and For...In loop </title>
+    </head>
+    
+    <body>
+        <script type = "text/javascript">
+            /*For of loop helps us to directly access array elements (for example), instead of array indexes in case of for..in loop
+            Lets see an example*/
+            
+            var num = new Array();
+            num = [32, 1, 27, 77, 99, 10, 500, 128, 64, 1024];
+            
+            //For..In loop to display array indexes
+            for(let i in num)
+                {
+                    document.write("The array indexes are: " + i + "<br />");
+                }
+            //For..Of loop to dispaly array elements
+            
+            for(let i of num)
+                {
+                  document.write("The elements in the array are: " + i + "<br />");  
+                }
+        </script>
+    </body>
+</html>
