@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title> Palindrome </title>
+</head>
+
+<body>
+    <script>
+    
+    var my_array = ["lakshmi", "rotor", "level", "dipu", "post"]; 
+    var reverse_string;
+    for (let str of my_array)
+    {
+    reverse_string = str.split('').reverse().join('');
+    if(str == reverse_string)
+        {
+        document.write(str + "<br />");
+        }
+    }
+    </script>
+</body>
+    
+</html>
