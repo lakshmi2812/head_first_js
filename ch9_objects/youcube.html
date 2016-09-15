@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>YouCube - The blog for Cube Puzzlers!</title>
+    </head>
+    <body onload = "showBlog(4);">
+        <script type = "text/javascript">
+            function Blog(body,date){
+                this.body = body;
+                this.date = date;
+            }
+            
+            var blog = [new Blog("Hi..This is my first entry..just got a new 4x4 cube!", new Date("08/20/2016")),
+                                new Blog("Solved the 4x4 cube.. :)", new Date("09/2/2016")),
+                                new Blog("Exploring new cubes in the market!..Will post as soon as I buy a new one!", new Date("09/07/2016")),
+                                new Blog("Bought a new 6x6 cube!..", new Date("08/29/2016")),
+                                new Blog("Hmm...This one's a little tricky!", new Date("08/24/2016")),
+                                new Blog("Got stuck at solving one side of this cube!..but, excited to solve it!", new Date("09/4/2016")),
+                                new Blog("Yay!!..Solved this one today! :):)", new Date("08/26/2016"))];
+            //alert(blog[0].date);
+            function showBlog(numOfEntries){
+               // var numOfEntries = prompt("There are " + blog.length() +"blog entries.\n How many blog entries do you wantr to see?");
+                if(!numOfEntries)
+                    {
+                    numOfEntries = blog.length;
+                    }
+                var i = 0, blogtext = "";
+                while(i < blog.length && i < numOfEntries)
+                    {
+                        if(i%2 == 0)
+                            {
+                                blogtext += "<p style='background-color:#EEEEEE'>";
+                            }
+                        else{
+                            blogtext += "<p>";
+                            }
+                        blogtext += "<strong>" + (blog[i].date.getMonth()+1) +"/"+ blog[i].date.getDate() + "/" + blog[i].date.getFullYear() + "</strong><br />" + blog[i].body + "</p>";
+                        
+                        i++;
+                    }
+                document.getElementById("myblog").innerHTML = blogtext; 
+                
+            }
+            
+        </script>
+        
+        <p><h3>YouCube - The blog for Cube Puzzlers!</h3></p>
+        <img src = "" />
+    <div id = "myblog"></div>
+    <input type = "button" id = "show_all_entries" name = "show_all_entries" value = "Show all Blog entries!" onclick = "showBlog();"/>
+    </body>
+    
+</html>
