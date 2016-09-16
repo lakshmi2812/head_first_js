@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Mark and his toys</title>
+    </head>
+    
+    <body>
+        <script type = "text/javascript">
+            
+    function processData(total_money, toys) {
+    //Enter your code here
+    //var toys = input.split("\n")[1].split(' ');
+    toys.sort(function(a,b){
+        return a-b;
+    });
+    var sum = 0, n = 0, i = 0;
+    //var total_money = input.split("\n")[0].split(' ')[1];
+    while(i < (toys.length))
+    { 
+          var toy = parseInt(toys[i]);
+          sum = sum + toy;
+          if(sum>total_money)
+              {break;}
+          n++;
+          i++;
+    }
+    console.log("Mark can buy " + n + " toys");
+} 
+            processData(50, [111,45,63,1,12,5,10,5])
+            
+        </script>
+    </body>
+</html>
