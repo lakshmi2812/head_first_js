@@ -13,7 +13,7 @@ function Book(name, pages){
 }
 
 //Instance of the Book object
-let habit = new Book("The Power Of Habit", 450);
+let habit = new Book("The Power Of Habit", 450); // create new object from constructor function using 'new' keyword
 console.log(habit.showDetails());
 
 //Another instance of the Book object
