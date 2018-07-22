@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Youcube - The Blog for cube puzzlers</title>
+  </head>
+  <body>
+    <p id="showBlog"></p>
+    <script type="text/javascript">
+      function Blog(body, date){
+        this.body = body || "Nothing going on today";
+        this.date = new Date();
+      }
+      //Get a text representation of the blog entry
+      Blog.prototype.toString = function(){
+        return "[" + this.date.getMonth() + "/" + this.date.getDate() + "/"
+                + this.date.getFullYear() + "]" + this.body;
+      }
+
+      //Show blog text on the page
+      Blog.prototype.toHTML = function(highlight){
+        var blogHTML = "";
+
+        blogHTML += highlight?"<p style='background-color:#EEEEEE'>":"<p>";
+
+        blogHTML += "<strong>" + this.date.getMonth() + "/" + this.date.getDate() + "/"
+              + this.date.getFullYear() + "</strong><br>" + this.body + "<br><em>" + this.signature
+              + "</em></p>";
+        document.getElementById("showBlog").innerHTML += blogHTML;
+      }
+
+      //check if blog contains a specific text
+      Blog.prototype.containsText = function(text){
+        return (this.body.indexOf(text) !== -1);
+      }
+
+      //Blogger's signature
+      Blog.prototype.signature = "by Puzzler Ruby";
+
+      var blog = [new Blog("Hi..This is my first entry..just got a new 4x4 cube!", new Date("08/20/2016")),
+                        new Blog("Solved the 4x4 cube.. :)", new Date("09/2/2016")),
+                        new Blog("Exploring new cubes in the market!..Will post as soon as I buy a new one!", new Date("09/07/2016")),
+                        new Blog("Bought a new 6x6 cube!..", new Date("08/29/2016")),
+                        new Blog("Hmm...This one's a little tricky!", new Date("08/24/2016")),
+                        new Blog("Got stuck at solving one side of this cube!..but, excited to solve it!", new Date("09/4/2016")),
+                        new Blog("Yay!!..Solved this one today! :):)", new Date("08/26/2016"))];
+
+      for(let i = 0; i < blog.length; i++){
+        blog[i].toHTML(true);
+      }
+    </script>
+  </body>
+</html>
