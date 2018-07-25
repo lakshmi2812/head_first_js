@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Cookie</title>
+  </head>
+  <body>
+    <script>
+      var name = "mycookie";
+      var date = new Date();
+      document.cookie = "username=test";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let cookieData = document.cookie.split(";")[0].split("=")[0];
+      alert("Hello"+document.cookie);
+    </script>
+  </body>
+</html>
